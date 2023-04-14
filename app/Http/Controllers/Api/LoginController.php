@@ -11,9 +11,9 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        $this->validateLogin($request);
+        $this->validateLogin($request);//envia los datos  en la funcion validate login
 
-        if(Auth::attempt($request->only('email','password'))){
+        if(Auth::attempt($request->only('email','password'))){//una vez validados crea el token o no
             return response()->json([
                 'token' =>$request->user()->createtoken($request->name)->plainTextToken,
                 'message'=>'Success'
@@ -24,7 +24,7 @@ class LoginController extends Controller
         ],401);
     }
 
-    public function validateLogin(Request $request)
+    public function validateLogin(Request $request)//valida los datos
     {
         return $request->validate([
             'email'=>'required|email',
