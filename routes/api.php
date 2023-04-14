@@ -22,8 +22,8 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 //rutas publicas
 
-Route::post('register', [App\Http\Controllers\Api\RegisterController::class, 'register']);
-Route::post('login', [App\Http\Controllers\Api\LoginController::class, 'login']);
+Route::post('register', [App\Http\Controllers\Api\RegisterController::class, 'register']);//registro de usuarios
+Route::post('login', [App\Http\Controllers\Api\LoginController::class, 'login']);// login de usuarios
 
 Route::get('/books', [App\Http\Controllers\Api\BookController::class, 'index']);//mostrar books
 
