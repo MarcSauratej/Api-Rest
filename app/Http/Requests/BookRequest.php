@@ -19,7 +19,7 @@ class BookRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules(): array
+    public function rules(): array//datos que requiere para que funcione la Api
     {
         return [
             'user_id'=>'required',
