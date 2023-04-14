@@ -10,13 +10,13 @@ use App\Http\Requests\BookRequest;
 class BookController extends Controller
 {
 
-    public function index()
+    public function index()//funcion para mostrar los libros
     {
         $books = Book::all();
         return $books;
     }
 
-    public function store(BookRequest $request)
+    public function store(BookRequest $request)//funcion para crear los libros y ponerlos en la DB
     {
         $books = Book::create($request->all());
 
@@ -26,7 +26,7 @@ class BookController extends Controller
         ],201);
     }
 
-    public function update(BookRequest $request,$books)
+    public function update(BookRequest $request,$books)//para actualizar los libros de la DB
     {
         $books = Book::find($books);
         $books->update($request->all());
@@ -37,7 +37,7 @@ class BookController extends Controller
     }
 
 
-    public function destroy($books)
+    public function destroy($books)//para borrar los libros de la DB
     {
         $books = Book::find($books);
         $books->delete();
