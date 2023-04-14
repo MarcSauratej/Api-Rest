@@ -15,7 +15,7 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition(): array//creado para introducir datos en la tabal user
     {
         return [
             'name' => fake()->name(),

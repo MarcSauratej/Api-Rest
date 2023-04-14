@@ -14,7 +14,7 @@ class BookFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition()//creado para introducir datos en la tabla Books
     {
         return [
             'user_id'=>rand(1, 10),
